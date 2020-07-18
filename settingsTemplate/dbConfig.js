@@ -1,8 +1,8 @@
 const DBConnection = {
-  server: "DESKTOP-7Q5OG91\\SQLEXPRESS01",
+  server: "DESKTOP-3G4BSAI\\SQLEXPRESS",
   database: "MedDb",
-  user: "sanad",
-  password: "123456789",
+  user: "afeka",
+  password: "afeka",
   options: {
     encrypt: true,
   },
