@@ -26,4 +26,17 @@ router.post(
   })
 );
 
+router.post(
+  "/addDemo",
+  bodyParser,
+  asyncHandler(async (req, res) => {
+    try {
+      const data = await controller.addDemo(req.body);
+      res.status(200).send(data);
+    } catch (err) {
+      res.status(400).send(err);
+    }
+  })
+);
+
 module.exports = router;

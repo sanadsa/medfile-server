@@ -20,6 +20,7 @@ class DBCourseRepository {
   }
 
   addPatient(patient) {
+    console.log(patient);
     let request = dbPool.request();
     request.input("gender", sql.NVarChar(50), patient.gender);
     request.input("birth", sql.Date, patient.birth);
@@ -42,6 +43,24 @@ class DBCourseRepository {
 
     return request
       .execute("spPatient_Insert")
+      .then((res) => {
+        return res;
+      })
+      .catch((err) => {
+        console.log(err);
+        throw err;
+      });
+  }
+  // DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO
+  addDemo(demoDetails) {
+    console.log(demoDetails);
+    let request = dbPool.request();
+    request.input("ID", sql.Int, DemographicDetails.ID);
+    request.input("fNAME", sql.NVarChar(50), DemographicDetails.fNAME);
+    request.input("lNAME", sql.NVarChar(50), DemographicDetails.lNAME);
+
+    return request
+      .execute("spDemo_Insert")
       .then((res) => {
         return res;
       })
