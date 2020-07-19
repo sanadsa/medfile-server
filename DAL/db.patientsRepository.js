@@ -69,6 +69,18 @@ class DBCourseRepository {
         throw err;
       });
   }
+
+  getAllProcedures() {
+    return dbPool
+      .request()
+      .execute("spProcedures_GetAll")
+      .then((res) => {
+        return res.recordset;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 }
 
 module.exports = new DBCourseRepository();

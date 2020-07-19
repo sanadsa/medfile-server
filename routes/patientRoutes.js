@@ -4,6 +4,7 @@ const controller = require("../controller/patients");
 const asyncHandler = require("../helpers/asyncHandler");
 const bodyParser = require("body-parser").json();
 
+// Get Patients
 router.get(
   "/getPatients",
   asyncHandler(async (req, res) => {
@@ -13,6 +14,7 @@ router.get(
   })
 );
 
+// Add patient to the list
 router.post(
   "/addPatient",
   bodyParser,
@@ -36,6 +38,16 @@ router.post(
     } catch (err) {
       res.status(400).send(err);
     }
+  })
+);
+
+// Get Procedures
+router.get(
+  "/getProcedures",
+  asyncHandler(async (req, res) => {
+    const data = await controller.getAllProcedures();
+
+    res.send(data);
   })
 );
 
