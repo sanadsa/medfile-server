@@ -55,9 +55,9 @@ class DBCourseRepository {
   addDemo(demoDetails) {
     console.log(demoDetails);
     let request = dbPool.request();
-    request.input("ID", sql.Int, DemographicDetails.ID);
-    request.input("fNAME", sql.NVarChar(50), DemographicDetails.fNAME);
-    request.input("lNAME", sql.NVarChar(50), DemographicDetails.lNAME);
+    request.input("ID", sql.Int, demoDetails.ID);
+    request.input("fNAME", sql.NVarChar(50), demoDetails.fName);
+    request.input("lNAME", sql.NVarChar(50), demoDetails.lName);
 
     return request
       .execute("spDemo_Insert")
@@ -70,7 +70,7 @@ class DBCourseRepository {
       });
   }
 
-  getAllProcedures() {
+  /* getAllProcedures() {
     return dbPool
       .request()
       .execute("spProcedures_GetAll")
@@ -80,7 +80,7 @@ class DBCourseRepository {
       .catch((err) => {
         console.log(err);
       });
-  }
+  } */
 }
 
 module.exports = new DBCourseRepository();

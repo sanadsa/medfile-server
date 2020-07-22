@@ -16,11 +16,11 @@ class PatientsController {
   }
 
   // Get Procedures
-  getAllProcedures() {
+  /* getAllProcedures() {
     return db.getAllProcedures();
-  }
+  } */
 }
 
 module.exports = new PatientsController();
 
-getAllProcedures;
+/* getAllProcedures; */

@@ -42,13 +42,13 @@ router.post(
 );
 
 // Get Procedures
-router.get(
+/* router.get(
   "/getProcedures",
   asyncHandler(async (req, res) => {
     const data = await controller.getAllProcedures();
 
     res.send(data);
-  })
-);
+  }) 
+); */
 
 module.exports = router;
